@@ -9,15 +9,10 @@ class Book < ActiveRecord::Base
     header = ['id', 'title', 'author', 'already_read']
 
     CSV.generate(headers: true) do |csv|
-
       csv << header
-
       book_list.each do |book|
-
         csv << [book.id, book.title, book.author, book.already_read]
       end
     end
-
-
   end
 end
